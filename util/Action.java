@@ -41,7 +41,7 @@ public class Action {
 		if (effect.name.equals("physical attack"))
 			cdTimer = 1/owner.attackspeed;
 		else
-			cdTimer = cooldown * (100-owner.cdr)/100;
+			cdTimer = cooldown * (100 - Math.min(40, owner.cdr)) / 100;
 		//System.out.println("CD Timer set to "+cdTimer);
 		available = false;
 		effect.use(owner, target);
